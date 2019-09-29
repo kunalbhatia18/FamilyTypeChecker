@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="FamilyCheck">
+    <head>
+        <title>Family Type Checker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <style>
+            .message { font-size: 1.3em; font-weight: bold; }
+        </style>
+    </head>
+    <body>
+        <div class="container" ng-controller="FamilyCheckController">
+            <h1>Family Type Checker</h1>
+
+            <div class="form-group">
+                <input id="Family-menu" type="text"
+                       placeholder="list the number of family members in your family by comma seperation eg 1,2,3...."
+                       class="form-control"
+                       ng-model="typicalFamily">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default"
+                        ng-click="isTooMuch()">
+                    Check If family is Joint or Nucleur
+                </button>
+            </div>
+            <div class="form-group message">
+                {{FamilyCheckResponse}}
+            </div>
+        </div>
+    </body>
+</html>
